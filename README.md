@@ -5,7 +5,7 @@
  
 2. Clone this repo:
    ```
-    git@github.com:qleml/spartan-server.git
+    git clone git@github.com:qleml/spartan-server.git
    ```
 3. Start by building the docker image by running (in the project root, where the Dockerfile is placed):
     ```
