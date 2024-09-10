@@ -2,7 +2,7 @@
 FROM node:18
 
 # Create and set the working directory
-WORKDIR /usr/src/spartian-server
+WORKDIR /usr/src/spartan-server
 
 # Install dependencies
 COPY package*.json ./
