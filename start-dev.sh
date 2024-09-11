@@ -35,6 +35,6 @@ else
     -v $(pwd):/usr/src/spartan-server \
     -v /usr/src/spartan-server/node_modules \
     spartan-server:latest \
-    bash -c "cd /usr/src/spartan-server && npm install && node index.js"
+    bash -c "cd /usr/src/spartan-server && npm install && npx nodemon index.js"
 fi
 
