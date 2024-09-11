@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Check if the shell flag (-s) is passed
 START_SHELL=false
 while getopts "s" opt; do
   case $opt in
@@ -15,8 +14,8 @@ while getopts "s" opt; do
 done
 
 # Stop and remove any existing container
-docker stop spartan-server || true
-docker rm spartan-server || true
+docker stop spartan-server-dev || true
+docker rm spartan-server-dev || true
 
 # If the -s flag is passed, start with a shell; otherwise, run the application
 if [ "$START_SHELL" = true ]; then
