@@ -6,6 +6,7 @@
 2. Clone this repo:
    ```
     git clone git@github.com:qleml/spartan-server.git
+    cd spartan-server
    ```
 3. Start by building the docker image by running (in the project root, where the Dockerfile is placed):
     ```
