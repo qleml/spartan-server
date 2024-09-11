@@ -22,7 +22,7 @@ docker rm spartan-server || true
 if [ "$START_SHELL" = true ]; then
   echo "Starting container with shell access..."
   docker run -it \
-    --name spartan-server \
+    --name spartan-server-dev \
     -p 7051:7051 \
     -v $(pwd):/usr/src/spartian-server \
     -v /usr/src/spartan-server/node_modules \
@@ -31,7 +31,7 @@ if [ "$START_SHELL" = true ]; then
 else
   echo "Starting container in normal mode..."
   docker run -d \
-    --name spartan-server \
+    --name spartan-server-dev \
     -p 7051:7051 \
     -v $(pwd):/usr/src/spartian-server \
     -v /usr/src/spartan-server/node_modules \
