@@ -14,14 +14,14 @@ while getopts "s" opt; do
 done
 
 # Stop and remove existing container
-docker stop spartan-server-dev || true
-docker rm spartan-server-dev || true
+docker stop spartan-server || true
+docker rm spartan-server || true
 
 # If the -s flag is passed, start with a shell; otherwise, run the application
 if [ "$START_SHELL" = true ]; then
   echo "Starting container with shell access..."
   docker run -it \
-    --name spartan-server-dev \
+    --name spartan-server \
     -p 7051:7051 \
     -v $(pwd):/usr/src/spartian-server \
     -v /usr/src/spartan-server/node_modules \
@@ -30,7 +30,7 @@ if [ "$START_SHELL" = true ]; then
 else
   echo "Starting container in normal mode..."
   docker run -d \
-    --name spartan-server-dev \
+    --name spartan-server \
     -p 7051:7051 \
     -v $(pwd):/usr/src/spartian-server \
     -v /usr/src/spartan-server/node_modules \
