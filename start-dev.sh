@@ -14,8 +14,9 @@ while getopts "s" opt; do
 done
 
 # Stop and remove existing container
-docker stop spartan-server-dev || true
-docker rm spartan-server-dev || true
+echo "Stopping and removing existing container..."
+docker stop spartan-server-dev > /dev/null 2>&1 || true
+docker rm spartan-server-dev > /dev/null 2>&1 || true
 
 # If the -s flag is passed, start with a shell; otherwise, run the application
 if [ "$START_SHELL" = true ]; then
@@ -35,6 +36,6 @@ else
     -v $(pwd):/usr/src/spartan-server \
     -v /usr/src/spartan-server/node_modules \
     spartan-server:latest \
-    bash -c "cd /usr/src/spartan-server && npm install && npx nodemon index.js"
+    bash -c "cd /usr/src/spartan-server && npm install && npm run dev"
 fi
 
