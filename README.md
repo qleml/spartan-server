@@ -12,12 +12,12 @@
     ```
     chmod +x build.sh run.sh
     ```
-Then build the docker image by running the following script:
+4. Then build the docker image by running the following script:
     ```
     ./build.sh
     ```
     This will also prune all resulting untagged images in case of a rebuild.
-4. Finally, start the server by running the container with
+5. Finally, start the server by running the container with
     ```
     ./run.sh
     ```
