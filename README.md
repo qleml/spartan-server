@@ -8,17 +8,18 @@
     git clone git@github.com:qleml/spartan-server.git
     cd spartan-server
    ```
-3. Start by building the docker image by running the following (in the project root, where the Dockerfile is placed):
+3. Start by making the build and run scripts for docker executable:
     ```
-    docker build -t spartan-server:latest .
+    chmod +x build.sh run.sh
     ```
-4. Then make the `start-dev.sh` script executable
+Then build the docker image by running the following script:
     ```
-    chmod +x start-dev.sh
+    ./build.sh
     ```
-    and execute it:
+    This will also prune all resulting untagged images in case of a rebuild.
+4. Finally, start the server by running the container with
     ```
-    ./start-dev.sh
+    ./run.sh
     ```
-    This script mounts all the necessary volumes and should run the application on `localhost:7051` in the docker container called `spartan-server-dev`. you have the option to start the script with the `-s` flag, i.e. `./start-dev.sh -s`. This will open a shell in the container and you can proceed with `npm run dev` to run the application. The shell is important, because npm modules should always be installed from this shell inside the container (i.e. if you want to install further packages for the application with e.g. the `npm` package manager). If you prefer, you can rebuild the Docker image afterwards following step 3.
+    This script mounts all the necessary volumes and should run the application on `localhost:7051` in the docker container called `spartan-server-dev`. You have the option to start the script with the `-s` flag, i.e. `./run.sh -s`. This will open a shell in the container and you can proceed with `npm run dev` to run the application. The shell is important, because npm modules should always be installed from this shell inside the container (i.e. if you want to install further packages for the application with e.g. the `npm` package manager). If you prefer, you can rebuild the Docker image afterwards following step 3.
 
