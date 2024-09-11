@@ -20,5 +20,5 @@
     ```
     ./start-dev.sh
     ```
-    This script mounts all the necessary volumes and should run the application on `localhost:7051` in the docker container called `spartan-server-dev`. you have the option to start the script with the `-s` flag, i.e. `./start-dev.sh -s`. This will open a shell in the container and you can proceed with `npx nodemon index.js` to run the application. The shell is important, because npm modules should always be installed from this shell inside the container (i.e. if you want to install further packages for the application with e.g. the `npm` package manager). If you prefer, you can rebuild the Docker image afterwards following step 3.
+    This script mounts all the necessary volumes and should run the application on `localhost:7051` in the docker container called `spartan-server-dev`. you have the option to start the script with the `-s` flag, i.e. `./start-dev.sh -s`. This will open a shell in the container and you can proceed with `npm run dev` to run the application. The shell is important, because npm modules should always be installed from this shell inside the container (i.e. if you want to install further packages for the application with e.g. the `npm` package manager). If you prefer, you can rebuild the Docker image afterwards following step 3.
 

@@ -1,12 +1,6 @@
-// index.js
-const express = require('express');
-const app = express();
-const PORT = 7051;
+const app = require('./api/server.js');
+const port = process.env.PORT || 7051;
 
-app.get('/', (req, res) => {
-  res.send('good evening!');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
