@@ -13,7 +13,7 @@ while getopts "s" opt; do
   esac
 done
 
-# Stop and remove any existing container
+# Stop and remove existing container
 docker stop spartan-server-dev || true
 docker rm spartan-server-dev || true
 
